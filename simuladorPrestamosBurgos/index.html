@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Bienvenido para simular un préstamo te vamos a hacer una serie de
+      preguntas a continuación
+    </h1>
+
+    <form action="" id="form" >
+      <label for="">Nombre:</label>
+      <input type="text" id="inputNombre" /><br /><br />
+      <label for="">Apellido:</label>
+      <input type="text" id="inputApellido" /><br /><br />
+      <label for="">DNI:</label>
+      <input type="text" id="inputDni" /><br /><br />
+      <label for="">Monto de prestamo:</label>
+      <input type="number" id="inputMontoPrestamo" /><br /><br />
+      <label for="">Cantidad de cuotas:</label>
+      <input type="number" id="inputCuotas" /><br /><br />
+      <label for="">Tasa de interes anual:</label>
+      <input type="number" id="inputTasa" /><br /><br />
+      <button id="buttonSubmit">Simular prestamo</button>
+      <button id="buttonPrestamos" >Obtener todos los prestamos</button>
+      <button id="buttonLimpieza" >Limpiar prestamos</button>
+    </form>
+    <div id="divPrestamos" >
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
