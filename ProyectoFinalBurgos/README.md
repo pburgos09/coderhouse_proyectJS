@@ -1,0 +1,13 @@
+# Pagina de prestamos personales
+
+Proyecto de JavaScript para el curso de Codehouse
+
+Pagina para simular prestamos personales, donde colocas algunos datos personales, monto del prestamo, cantidad de cuotas/meses a pagar y la tasa de interes anual. Al simular el prestamo aparece a la derecha del form dicha simulacion, y cuando listas todos los prestamos realizados en una tabla debajo del form aparecen listadas, podes limpiar dicha tabla y tus datos, ya que se guardan en el localStorage y al actualizar la pagina y apretar de nuevo el boton de "listar todos los prestamos" aparecen los ultimos realizados. Los comentarios salieron de una API que proporciona comentarios dummy.
+
+Utilicé Bulma para darle estilos a la pagina y ademas Axios para el pedido a la API
+
+En el archivo burguer.js esta la logica para que los botones aparezcan en un menu hamburguesa a medida que achicas el tamaño de la pagina, esta lo mas responsive posible.
+
+En el archivo comments.js esta la logica para traerme los comentarios dummy de una API utilizando axios, async y await. Con esa funcion hago que se visualicen en el index.html al modificar el DOM.
+
+En el archivo simulador.js esta casi toda la logica para que funcione la pagina. Hay 2 funciones constructoras: "Persona" y "Prestamo" donde la primera creo a la persona y guardo sus datos y la segunda creo cada prestamo que se simula. La funcion "creacionCliente" se activa al apretar el boton "simular prestamo", donde si no existe un cliente (aca verifica si en el localStorage hay datos de una persona guardad) lo crea y lo guarda en el localStorage, llama a la funcion "creacionPrestamo" y el resultado se visualiza en la tabla de la derecha del form modificando el DOM. La funcion "mostrarPrestamos" se activa presionando el boton "listar todos los prestamos" y modifica el DOM insertando todos los prestamos simulados en la tabla inferior. La funcion "limpiarLocal" limpiar tanto el localStorage como el parametro cliente y ademas limpia la tabla de simulaciones. La funcion "prestamosEnArray" lo que hace es recorrer el array de los prestamos simulados del cliente y devolver todo estos para que se agregue a la tabla. La funcion "creacionPrestamo" calcula el valor de la cuota del prestamo simulado y crea una nueva instancia de Prestamo para pushearlo al array de prestamos del cliente. La funcion "cantidadCuotas" verifica que las cuotas que se introducen esten entre 12 y 60, si el numero esta fuera de ese rango, agrega parrafos y un class para que el input resalte en rojo con un mensaje predefinido. Y por ultimo y la funcion mas importante "calculoCuota" es la que tiene la logica matematica para calcular la cuota mensual del prestamo.

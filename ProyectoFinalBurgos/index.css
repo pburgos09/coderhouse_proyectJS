@@ -1,0 +1,58 @@
+.navbar {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+.navbar-item {
+  padding: 5;
+}
+
+.formsimulacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 3rem;
+}
+
+.divsimulado {
+  display: flex;
+  align-items: center;
+}
+
+.simulado {
+  height: 6rem;
+  align-content: center;
+}
+
+.descripcion {
+  padding-top: 5rem;
+}
+
+.content {
+  margin: 3rem;
+}
+
+@media (max-width: 768px) {
+  .formsimulacion {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+  .formsimulacion {
+    margin: 3rem;
+  }
+  
+}
+
+@media (max-width: 940px) {
+  .buttons{
+    display: grid;
+  }
+}
+
+@media (max-width: 425px){
+  .table{
+    font-size: 10px;
+  }
+}

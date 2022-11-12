@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Simulador de prestamos</title>
+  </head>
+  <body>
+    <!----------Inicio de la navbar---------->
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="./views/Mi proyecto-1.png" width="105" height="62" />
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html"> Home </a>
+          <a class="navbar-item" href="#simulacion"> Simular prestamo </a>
+          <a class="navbar-item" href="#simulados"> Mis prestamos simulados </a>
+          <a class="navbar-item" href="#comentarios"> Comentarios </a>
+        </div>
+      </div>
+    </nav>
+
+    <!----------Fin de la navbar---------->
+
+    <!-----------Inicio de descripcion---------->
+
+    <article class="message is-primary is-medium descripcion">
+      <div class="message-header">
+        <p>Simulador de prestamos personales</p>
+      </div>
+      <div class="message-body">
+        En esta pagina vas a poder
+        <strong> simular tu prestamo personal</strong>, usando el sistema de
+        interes bancario compuesto. Vas a poder ingresar
+        <em> el monto, la cantidad de cuotas y la tasa de interes anual</em> y
+        vas a poder visualizar una lista con todas las simulaciones realizadas
+      </div>
+    </article>
+
+    <!----------Fin de descripcion---------->
+
+    <!----------Inicio del form+prestamo simulado---------->
+    <div class="formsimulacion">
+      <form class="boxform box" id="simulacion">
+        <div class="content">
+          <h1>Simular prestamo</h1>
+        </div>
+        <div class="field">
+          <label class="label" >Nombre</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Juan" id="inputNombre"/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Apellido</label>
+          <div class="control has-icons-right">
+            <input class="input" type="text" placeholder="Perez" id="inputApellido"/>
+          </div>
+ 
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              type="email"
+              placeholder="juanperez@mail.com"
+              id="inputEmail"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Monto de prestamo</label>
+          <div class="control">
+            <input class="input" type="number" placeholder="10000" id="inputMontoPrestamo"/>
+          </div>
+        </div>
+        <div class="field" id="divCuotas">
+          <label class="label">Cantidad de cuotas (en meses)</label>
+          <div class="control">
+            <input class="input" type="number" placeholder="12" id="inputCuotas"/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Tasa de interes anual (%)</label>
+          <div class="control">
+            <input class="input" type="number" placeholder="80" id="inputTasa"/>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control buttons">
+            <button class="button is-link" id="buttonSubmit">Simular prestamo</button>
+            <button class="button is-link " id="buttonPrestamos" href="#simulados">Listar todos los prestamos</button>
+          </div>
+        </div>
+      </form>
+      <div class="content divsimulado">
+        <table class="simulado table is-bordered">
+          <thead>
+            <tr>
+              <th>Monto de préstamo</th>
+              <th>Cantidad de cuotas</th>
+              <th>Valor de cuota</th>
+            </tr>
+          </thead>
+          <tbody id="tbodySimulado">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!----------Fin del form+prestamo simulado---------->
+
+    <!----------Inicio de la tabla visual de prestamos---------->
+
+    <div class="box" id="simulados">
+      <div class="content">
+        <h1>Prestamos simulados</h1>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Prestamo N°</th>
+              <th>Monto de préstamo</th>
+              <th>Cantidad de cuotas</th>
+              <th>Valor de cuota</th>
+            </tr>
+          </thead>
+          <tbody id="mostrarSimulados">
+          </tbody>
+        </table>
+      </div>
+      <button class="button is-link" id="buttonLimpieza">Limpiar tabla prestamos</button>
+    </div>
+
+    <!----------Fin de la tabla visual de prestamos---------->
+
+    <!----------Inicio de comentarios---------->
+
+    <div class="box" id="comentarios">
+      <div class="content">
+        <h1>Comentarios</h1>
+      </div>
+      <article class="media">
+        <div class="media-content">
+          <div class="content" id="comments">
+            <p>
+              <strong>John Smith</strong> <small>@johnsmith</small>
+              <br />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              efficitur sit amet massa fringilla egestas. Nullam condimentum
+              luctus turpis.
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <a class="level-item" aria-label="reply">
+                <span class="icon is-small">
+                  <i class="fas fa-reply" aria-hidden="true"></i>
+                </span>
+              </a>
+              <a class="level-item" aria-label="retweet">
+                <span class="icon is-small">
+                  <i class="fas fa-retweet" aria-hidden="true"></i>
+                </span>
+              </a>
+              <a class="level-item" aria-label="like">
+                <span class="icon is-small">
+                  <i class="fas fa-heart" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </div>
+
+    <!----------Fin de comentarios---------->
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./javascript/burguer.js"></script>
+  <script src="./javascript/comments.js"></script>
+  <script src="./javascript/simulador.js"></script>
+</html>
